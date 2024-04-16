@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', function(){
         if (taskInputValue !== ' '){
            taskList.push({ task: taskInputValue, date: dateInputValue ,status:false});
            displayList();
+           taskInputEl.value='';
         }
     })
     function displayList(){
+
+        taskListEl.innerHTML=''
         for(let i = 0; i < taskList.length ; i++){
           console.log(`${ i + 1 }. ${taskList[i]}`)
           const newTask = document.createElement('li');
